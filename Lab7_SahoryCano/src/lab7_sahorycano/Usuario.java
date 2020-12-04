@@ -16,6 +16,9 @@ public class Usuario implements Serializable {
     String nombre, apellido;
     String usuario, contraseña;
     int nota_final;
+    private Compilador compiladorUsuario;
+    
+    private static final long SerialVersionUID = 567L;
 
     public Usuario(String nombre, String apellido, String usuario, String contraseña) {
         this.nombre = nombre;
@@ -64,6 +67,12 @@ public class Usuario implements Serializable {
         this.nota_final = nota_final;
     }
     
-    
+     public Compilador getCompiladorUsuario() {
+        return compiladorUsuario;
+    }
+
+    public void setCompiladorUsuario(Compilador compiladorUsuario) {
+        this.compiladorUsuario = compiladorUsuario;
+    }
     
 }

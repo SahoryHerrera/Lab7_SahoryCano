@@ -7,8 +7,7 @@ public class Error {
 
     private int codigo_error;
     private String descripcion;
-    private static final long SerialVersionUID = 2000L;
-
+   
     public Error(int codigo_error, String descripcion) {
         this.codigo_error = codigo_error;
         this.descripcion = descripcion;

@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package lab7_sahorycano;
 
 import java.io.EOFException;
@@ -10,23 +15,15 @@ import java.util.ArrayList;
 
 /**
  *
- * @author sahory
+ * @author sahor
  */
-public class Administrador_compiladores {
+public class Usuarios {
 
-    ArrayList<Compilador> compilador = new ArrayList();
-    File file = null;
+    private ArrayList<Usuario> usuario = new ArrayList();
+    private File file = null;
 
-    public Administrador_compiladores(String fileLocation) {
+    public Usuarios(String fileLocation) {
         this.file = new File(fileLocation);
-    }
-
-    public ArrayList<Compilador> getcompilador() {
-        return compilador;
-    }
-
-    public void setCompis(ArrayList<Compilador> compilador) {
-        this.compilador = compilador;
     }
 
     public File getFile() {
@@ -37,16 +34,24 @@ public class Administrador_compiladores {
         this.file = file;
     }
 
-    public void addCompi(Compilador compilador) {
-        this.compilador.add(compilador);
+    public ArrayList<Usuario> getUsers() {
+        return usuario;
+    }
+
+    public void setUsers(ArrayList<Usuario> users) {
+        this.usuario = users;
+    }
+
+    public void addUser(Usuario user) {
+        this.usuario.add(user);
     }
 
     public void readFile() {
 
         try {
 
-            compilador = new ArrayList();
-            Compilador temp_Compilador;
+            usuario = new ArrayList();
+            Usuario tempUser;
 
             if (file.exists()) {
 
@@ -55,8 +60,8 @@ public class Administrador_compiladores {
 
                 try {
 
-                    while ((temp_Compilador = (Compilador) objectInput.readObject()) != null) {
-                        compilador.add(temp_Compilador);
+                    while ((tempUser = (Usuario) objectInput.readObject()) != null) {
+                        usuario.add(tempUser);
                     }
 
                 } catch (EOFException e) {
@@ -84,8 +89,8 @@ public class Administrador_compiladores {
             f_output = new FileOutputStream(file);
             o_output = new ObjectOutputStream(f_output);
 
-            for (Compilador compilator : compilador) {
-                o_output.writeObject(compilator);
+            for (Usuario user : usuario) {
+                o_output.writeObject(user);
             }
 
             o_output.flush();
@@ -104,7 +109,5 @@ public class Administrador_compiladores {
             }
 
         }
-
     }
-
 }

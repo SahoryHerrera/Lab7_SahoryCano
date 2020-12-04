@@ -1,19 +1,18 @@
 
 package lab7_sahorycano;
 
-import java.io.Serializable;
+
 import javax.swing.JTable;
 
 /**
  *
  * @author sahor
  */
-public class Compilador implements Serializable {
+public class Compilador  {
 
     private String Nombre, Nombre_Creador;
     private JTable Tabla_Variables, Tabla_Errores;
     private int lineasTotales;
-    private static final long SerialVersionUID = 1111L;
     private int lineas_Lexico, lineas_Sintactico, lineas_Semantico;
     private int lineas_Intermedio, lineas_Optimizador, lineas_Generador;
 
